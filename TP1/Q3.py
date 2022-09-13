@@ -1,3 +1,8 @@
+"""
+@author: meylan
+Question 3 TP1
+"""
+
 class Rectangle:
 
     def __init__(self, longueur = 0, largeur = 0):
@@ -28,16 +33,18 @@ class Rectangle:
     def __surface(self):
         return (self.__longueur * self.__largeur)
     
-    def get_Data_Input(self, longueur, largeur):
-        self.__longueur = longueur
-        self.__largeur = largeur
+    @classmethod
+    def get_Data_Input(self):
+        longueur = eval(input("longueur : "))
+        largeur = eval(input("largeur : "))
+        return self(longueur, largeur)
+        
 
     def affiche(self):
         print(f"Les attributs de la classe Rectangle sont : longueur = {self.__longueur}, largeur = {self.__largeur}")
         print(f"Périmetre {r.__perimetre}")
         print(f"Surface {r.__surface}")
 
-r = Rectangle()
-r.get_Data_Input(int(input("longueur = ")), int(input("largeur = ")))
+r = Rectangle.get_Data_Input()
 r.affiche()
 

@@ -1,3 +1,8 @@
+"""
+@author: meylan
+Question 4 TP1
+"""
+
 from math import pi, sqrt
 
 class Cercle:

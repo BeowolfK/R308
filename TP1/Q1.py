@@ -1,3 +1,7 @@
+"""
+@author: meylan
+Question 1 TP1
+"""
 class Rectangle:
     def __init__(self, longueur, largeur):
         self.longueur = longueur

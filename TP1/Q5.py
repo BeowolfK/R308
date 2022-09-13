@@ -1,3 +1,8 @@
+"""
+@author: meylan
+Question 5 TP1
+"""
+
 class Voiture:
     def __init__(self, marque ="", modele ="", volumeCarburant = 0, distanceParcouru = 0):
         self.marque = marque
@@ -12,10 +17,11 @@ class Voiture:
         self.distanceParcouru = distanceParcouru
 
     def consommation(self):
-        gallon = self.volumeCarburant * 3.785
-        distance = self.distanceParcouru * 1.609
-        print(distance / gallon)
+        coefKmEur = ((100*100)/self.distanceParcouru)/100
+        consoEur = coefKmEur * self.volumeCarburant
 
+        consoUsa = (self.distanceParcouru /1.609) / (self.volumeCarburant / 3.785)
+        print(self.marque, self.modele, self.distanceParcouru, f"({round(consoEur, 2)}, {round(consoUsa, 2)})")
 v = Voiture()
 v.get_Data(
     input("Marque = "),
